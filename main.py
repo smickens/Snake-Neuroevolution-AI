@@ -276,7 +276,7 @@ def fitness(genomes, config):
 					snakeAte = True
 
 				# INPUTS
-				# 1) x displacement to food (snake.food.row-snake.body[0][0])
+				# 1) x displacement to food
 				xDis_food = snake.food.row-snake.body[0][0]
 				# 2) y displacement to food ()
 				yDis_food = snake.food.col-snake.body[0][1]
@@ -337,12 +337,12 @@ def fitness(genomes, config):
 		draw_window(window, snakes, generation)
 
 # NEAT Algorithm Info
-	# inputs = snake head to food row distance, snake head to food col distance, snake length 
+	# inputs = snake head to food row distance, snake head to food col distance, and 8 inputs for what is around the snake head
 	# outputs = up, right, down , left
 	# activation function = tanh (maps value between -1 to 1)
-	# population size = 100 
-	# fitness function = fitness plus 0.1 and plus 0.5 when it reaches food for every frame it is alive (most important part of NEAT algorithm since it guides evolution)
-	# max generations = 30 (by 30 generations there should be a perfect bird, if not restart)
+	# population size = 200 
+	# fitness function = fitness plus 0.1 for every frame it is alive and plus 1 when it reaches food
+	# max generations = 100
 
 def run(config_path):
 	# loads in configuration file and tells neat what headings we used in it
